@@ -1,3 +1,4 @@
+//this files take the raw and calculate the score (contains logic)
 const calculateScoreAndRoadmap = (repoData, fileStructure, commitActivity) => {
   let score = 100;
   let roadmap = [];
