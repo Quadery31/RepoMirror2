@@ -1,3 +1,4 @@
+//yeh file url ko catch karta hai and it decides what to do with it
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -11,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 1. Connect to MongoDB
+// 1. Connecting to MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("MongoDB Error:", err));
@@ -82,7 +83,7 @@ const PORT = process.env.PORT || 5000;
 // 1. Export the app for Vercel 
 module.exports = app;
 
-// 2. Only start the server manually if NOT on Vercel (e.g. running locally)
+// 2. Only start the server manually if NOT on Vercel 
 if (require.main === module) {
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }
